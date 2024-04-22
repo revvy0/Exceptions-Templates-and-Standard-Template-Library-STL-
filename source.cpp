@@ -9,7 +9,10 @@
 char character(char start, int offset);
 
 class invalidCharacterException : public exception {
-
+public:
+    const char what() const noexcept {
+      return "Invalid character exception";
+    }
 };
 
 class invalidRangeException : public exception {
