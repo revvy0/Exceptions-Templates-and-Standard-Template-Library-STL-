@@ -8,6 +8,7 @@
 
 char character(char start, int offset);
 
+// exception classes
 class invalidCharacterException : public exception {
 public:
     const char what() const noexcept {
@@ -16,11 +17,27 @@ public:
 };
 
 class invalidRangeException : public exception {
-
+public:
+    const char what() const noexcept {
+        return "Invalid range exception";
+    }
 };
 
 char character(char start, int offset) {
+    // check if start is a letter...
+    if (!isalpha(start)) {
+        throw invalidCharacterException();
+    }
+    // calc target letter
+    char target = start + offset;
 
+    // checks if target is a letter...
+    if (!isalpha(target)) {
+        throw invalidRangeException();
+    }
+
+    // return target letter
+    return target;
 }
 
 int main () {
