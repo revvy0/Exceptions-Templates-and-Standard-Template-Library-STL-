@@ -41,7 +41,31 @@ char character(char start, int offset) {
 }
 
 int main () {
-
-
+// tests cases 
+try {
+    cout << "character('a', 1) returns: " << character('a', 1) << endl;
+}
+catch (const exception &e) {
+    cout << e.what() << endl;
+}
+try {
+    cout << "character('a', -1) returns: " << character('a', -1) << endl;
+}
+catch (const exception &e) {
+    cout << e.what() << endl;
+}
+try {
+    cout << "character('Z', -1) returns: " << character('Z', -1) << endl;
+}
+catch (const exception &e) {
+    cout << e.what() << endl;
+}
+try {
+    cout << "character('?', 5) returns: " << character('?', 5) << endl;
+}
+catch (const exception &e) {
+    cout << e.what() << endl;
+}
+    // looks weird but hopefully it works..
   return 0;
 }
