@@ -6,19 +6,21 @@
 #include <iostream>
 #include <stdexcept>
 
+using namespace std;
+
 char character(char start, int offset);
 
 // exception classes
 class invalidCharacterException : public exception {
 public:
-    const char what() const noexcept {
+    const char* what() const noexcept {
       return "Invalid character exception";
     }
 };
 
 class invalidRangeException : public exception {
 public:
-    const char what() const noexcept {
+    const char* what() const noexcept {
         return "Invalid range exception";
     }
 };
